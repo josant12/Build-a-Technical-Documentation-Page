@@ -1,0 +1,310 @@
+<nav id="navbar">
+  <header>HTML5 Documentacion</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduccion">Introduccion</a></li>
+    <li>
+      <a class="nav-link" href="#DOCUMENTO_HTML5">Documento HTML5</a
+      >
+    </li>
+    <li>
+      <a class="nav-link" href="#SEMANTICA_EN_HTML5">Semantica en HTML5</a>
+    </li>
+    <li><a class="nav-link" href="#NUEVO_MODELO_SEMANTICO_EN_HTML5">Nuevo modelo semantico en HTML5</a></li>
+    <li><a class="nav-link" href="#DEFINIR_SECCIONES_EN_HTML_5">Definir secciones en HTML 5</a></li>
+    <li>
+      <a class="nav-link" href="#SEMANTICA_Y_TITULOS_DE_CABECERA">Semantica y titulos de cabecera</a>
+    </li>
+    <li><a class="nav-link" href="#SECCIONES_IMPLICITAS">Secciones Implicitas</a></li>
+    <li><a class="nav-link" href="#ELEMENTOS_CON_SU_PROPIA_ESTRUCTURA">Elementos con su propia estructura</a></li>
+    <li><a class="nav-link" href="#FORMULARIOS_HTML5">Formularios HTML5</a></li>
+    <li><a class="nav-link" href="#ELEMENTOS_INPUT">Elementos Input</a></li>
+    <li>
+      <a class="nav-link" href="#ELEMENTO_DATALIST">Elemento DataList</a>
+    </li>
+    <li><a class="nav-link" href="#BARRAS_DE_PROGRESO">Barras de Progreso</a></li>
+    <li>
+      <a class="nav-link" href="#INTRODUCCION_AL_VIDEO_EN_HTML5"
+        >Introduccion al video en HTML5</a
+      >
+    </li>
+    <li><a class="nav-link" href="#Referencias">Referencias</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduccion">
+    <header>Introduccion</header>
+    <article>
+      <p>
+        HTML5 es un lenguaje de marcas que nos permite el desarrollo de páginas web, al cual se le han añadido un conjunto de capacidades que nos permiten explotar las capacidades de los dispositivos en temas de multimedia, rendimiento, offline, interacción con el usuario
+      </p>
+
+      <p>
+        De esta manera HTML5 se compone de un núcleo de elementos del lenguaje y una serie de APIs que nos permiten gestionar las nuevas capacidades.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="DOCUMENTO_HTML5">
+    <header>Documento HTML5</header>
+    <article>
+      <p>Aunque hasta HTML 4.01 habíamos tenido diferentes tipos de documentos, los cuales diferenciábamos por el doctype del documento, en HTML5 solo se tiene un único tipo de documento el cual estára determinado por la cabera:</p>
+      <code>
+       funcion {!DOCTYPE html}
+      </code>
+      <p>
+        De esta manera el documento le está diciendo al navegador que es un documento de tipo HTML5.</br>
+
+La siguiente cosa que haremos en un documento HTML5 será declarar el juego de caracteres que utilizará. Para ello deberemos de utilizar un elemento meta mediante su atributo charset.</br>
+
+Así, para indicar que el juego de caracteres de un documento es utf-8 escribiremos lo siguiente dentro del elemento head:
+      </p>
+<code>
+       head
+  meta charset="UTF-8"
+       /head
+      </code>
+    </article>
+  </section>
+  <section class="main-section" id="SEMANTICA_EN_HTML5">
+    <header>Semantica en HTML5</header>
+    <article>
+      <p>
+        Cuando se trabajaba con HTML 4 la estructura de un documento se conseguía mediante capas div y elementos de cabecera h1 a h6. Dependiendo de la anidación que utilizásemos con las cabeceras y capas, así se estructuraba nuestro documento.
+
+Los elementos div se utilizaban para determinar las secciones y sub-secciones.
+      </p>
+      <code>
+        div class="seccion"
+  h1Titulo Principal/h1
+  Artículo principal del texto.
+
+  div class="subseccion"
+    h2Subtítulo/h2
+    Texto relacionado con el primer subtítulo del artículo.
+  /div
+
+/div
+      </code> 
+
+      <p>
+        Esto generaba una serie de problemas en HTML 4. El primero es que la semántica del documento no depende de los elementos del documento HTML 4 sino del correcto uso de los estilos CSS. Y hay que recordar que el uso de CSS solo debería de ser para dar estilo al documento.
+      </p>
+      <p>
+        Otro problema era si queríamos unir varios documentos, es decir, componer un documento en base a diferentes documentos HTML 4, ya que lo que estamos buscando es unir capas div sobre otras capas div, además cada una podría tener títulos de cabecera de lo más variopintos dándo como resultado un documento con una estructura incorrecta.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="NUEVO_MODELO_SEMANTICO_EN_HTML5">
+    <header>Nuevo modelo semantico en HTML5</header>
+    <p>
+      Para resolver los problemas derivados de la semántica en HTML 4 se crean un conjunto de nuevos elementos en HTML 5: article, section, nav, aside, header y footer.
+    </p>
+    <p>
+      Article
+El elemento article nos permite definir una pieza independiente y auto-contenida dentro de un documento HTML 5.
+
+De esta manera podremos reutilizar los elementos article de múltiples formas.
+
+Los elementos article suelen contener el contenido de un post, la entrada de un foro, un artículo de un periódico,…
+    </p>
+    <ul>
+        <li>
+          Article
+El elemento article nos permite definir una pieza independiente y auto-contenida dentro de un documento HTML 5.
+
+De esta manera podremos reutilizar los elementos article de múltiples formas.
+
+Los elementos article suelen contener el contenido de un post, la entrada de un foro, un artículo de un periódico,…
+        </li>
+        <li>
+          Section
+Section es un elemento que representa una sección independiente dentro de un documento HTML 5, la cual no puede ser representada por otro elemento semántico más específico como podrían ser: nav, article, aside,…
+
+Las secciones suelen tener incorporadas un elemento h1 a h6 que le sirve para indicar el título de la sección.
+        </li>
+      </ul>
+  
+  </section>
+  <section class="main-section" id="DEFINIR_SECCIONES_EN_HTML_5">
+    <header>Definir secciones en HTML 5</header>
+    <p>
+      La primera sección dentro de un documento HTML 5 es el propio elemento body. Todo el contenido dentro del elemento body es una sección.
+    </p>
+    <p>
+      Dentro del elemento body podremos encontrar otros elementos que definan secciones por si mismo, las cuales se vayan anidando. Para ello encontramos elementos como article, section, nav y aside.
+    </p>
+    <p>
+      Cada sección dentro de HTML 5 tiene su propia jerarquía de títulos de cabecera. Es por ello que el primer título de cabecera de cada sección podrá ser un h1.
+    </p>
+  </section>
+  <section class="main-section" id="SEMANTICA_Y_TITULOS_DE_CABECERA">
+    <header>Semantica y titulos de cabecera</header>
+      <p>
+        A la hora de utilizar los títulos de cabecera h1 a h6 dentro de HTML 5 deberemos de saber que el primer elemento que utilicemos en la sección será el que marque la cabecera de la sección, independientemente del nivel de título de cabecera que tengamos.
+      </p>
+      <p>
+        Es decir, podemos tener una sección que empiece por h1y otra que empiece igualmente por h1 o por h3 u otro nivel.
+      </p>
+      <p>
+ Así podríamos encontrarnos con el siguiente código semántico en HTML 5:
+<code>
+section
+  h1>Artículo principal/h1
+  pTexto del artículo principal./p
+
+  section
+    h2Subsección/h2
+    p>Contenido secundario del artículo principal/p>
+  /section>
+        </code></p>
+    <p> La salida del documento HTML 5 será:
+
+Artículo Principal
+Subsección
+Artículo Secundario</p>
+    
+  </section>
+  <section class="main-section" id="SECCIONES_IMPLICITAS">
+    <header>Secciones Implicitas</header>
+    <article>
+      <p>
+        Para mantener compatibilidad con el procesamiento de documentos HTML 4, dentro de HTML 5 existen las secciones implícitas.
+      </p>
+
+      <p>
+        Y es que el uso de los elementos de títulos de cabecera dentro de una sección generarán una subsección, aunque no hayamos utilizado otro elemento para definir una nueva sección.
+      </p>
+      En el caso de que el elemento a utilizar sea del mismo nivel que el de la sección actual, lo que hará será crear una nueva sección.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="ELEMENTOS_CON_SU_PROPIA_ESTRUCTURA">
+    <header>Elementos con su propia estructura</header>
+    <article>
+      <p>
+        Hay un conjunto de elementos dentro de HTML 5 los cuales tienen su propia estructura y que no afectan a la estructura de la sección que los alberga. Estos son: blockquote, details, fieldset, figure y td.
+      </p>
+<ul>
+        <li>
+          Article
+El elemento article nos permite definir una pieza independiente y auto-contenida dentro de un documento HTML 5.
+
+De esta manera podremos reutilizar los elementos article de múltiples formas.
+
+Los elementos article suelen contener el contenido de un post, la entrada de un foro, un artículo de un periódico,…
+        </li>
+        <li>
+          Section
+Section es un elemento que representa una sección independiente dentro de un documento HTML 5, la cual no puede ser representada por otro elemento semántico más específico como podrían ser: nav, article, aside,…
+
+Las secciones suelen tener incorporadas un elemento h1 a h6 que le sirve para indicar el título de la sección.
+        </li>
+      </ul>
+      <p>
+        Así podríamos encontrarnos una referencia utilizando un elemento blockquote dentro de una sección.
+      </p>
+      <code>
+        section>
+  h1>Artículo principalh1>
+  p>Texto del artículo principal.p>
+
+  blockquote>
+    h1>Título a Remarcar/h1>
+   p>Contenido a remarcar./p>
+  blockquote>
+
+  section>
+    h2>Subsecciónh2>
+    p>Contenido secundario del artículo principal/p>
+  /section>
+
+section>
+      </code>
+      <p>Dicho elemento blockquote no afecta para nada a la estructura, la cual seguirá siendo:
+
+Artículo Principal
+Subsección</p>
+    </article>
+  </section>
+  <section class="main-section" id="FORMULARIOS_HTML5">
+    <header>Formularios HTML5</header>
+    <article>
+      <p>
+        Si hay un punto sobre el que se ha incrementado más su funcionalidad de HTML 4.01 a HTML5 ese es los formularios. Y es que se ha mantenido la misma filosofía de desarrollo, pero se ha dotado de nuevas funcionalidades a los formularios pasando a tener unos formularios con muchas más posibilidades
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="ELEMENTOS_INPUT">
+    <header>Elementos Input</header>
+      <p>El elemento principal de un formulario es el elemento de entrada de datos o input. Es por ello que dicho elemento en HTML5 ha incluido varias novedades.</p>
+    <p>Por un lado el elemento input ha incluido nuevos atributos: placeholder, autocomplete y autofocus que permiten de forma sencilla el ponerle información contextual, hacerle un foco y autocompletar su contendio.</p>
+    <p>
+      Por otro se han añadido más tipos de campos de entrada como son: search, email, url, tel, range, number, datetime-local, week, month, time y color. Lo cual nos proporciona más capacidades para obtener datos y sobre todo obtener datos de calidad, ya que ciertas de estas especializaciones llevan asociadas validaciones que nos aseguran que el dato es correcto. Por ejemplo, los campos de tipo email validan que el contenido corresponda con un email.
+    </p>
+    
+  </section>
+  <section class="main-section" id="ELEMENTO_DATALIST">
+    <header>Elemento DataList</header>
+    <article>
+      Hasta ahora cuando manejábamos una lista de elementos en HTML nos teníamos que ajustar al uso del elemento select, mediante el cual podíamos ofrecer al usuario una lista de selección simple o múltiple.
+      <p>En HTML5 aparece el elemento datalist. La idea del elemento datalist es la de poder crear una lista de elementos de forma independiente a los campos de entrada, de la misma forma que se creaban los elementos select para, de forma separada, asociarla a un elemento inputde formulario que lo necesite.</p>
+      <p>
+        Esto nos ofrece muchas posibilidades pensando en que estos datos, en ciertas ocasiones, se podrían cargar de forma ásincrona y así pueden modificarse dependiendo de la situación.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="BARRAS_DE_PROGRESO">
+    <header>Barras de Progreso</header>
+    <article>
+      Otro nuevo elemento, o mejor dicho, nuevos elementos, son las barras de progreso. Y es que en este caso tenemos dos tipos de barras de progreso: progress y meter.
+
+      <p>
+        En el caso de la barra de progreso progress encontramos un elemento sencillo dónde con un valor y un máximo se puede renderizar una barra de progreso.
+      </p>
+
+      <p>
+        El elemento meter nos ofrece más posibilidades ya que nos permite definir una barra de progreso en tramos y además indicarle cual es el valor óptimo de la barra de progreso para que el navegador sepa como renderizarla y asociarla un color: verde, rojo o amarillo.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="INTRODUCCION_AL_VIDEO_EN_HTML5">
+    <header>Introduccion al video en HTML5</header>
+    <article>
+      Con los aumentos de los anchos de vanda el uso del vídeo en la web cada vez se extiende más y hoy en día es el contenido más consumido en las páignas web.
+      <p>
+        Atrás quedaron los días en los que no existían estándares para poder reproducir vídeos por Internet y en los cuales tecnologías como Flash o Silverlight disponian de este privilegio. Si bien acarreaban otros problemas de portabilidad, seguridad y al fin y al cabo poca integración con los estándares HTML y CSS.
+      </p>
+
+      
+      <p>
+        A partir de HTML5 se estándariza el uso del vídeo mediante el elemento video del lenguaje. De igual manera aparecn un conjunto de APIs que nos permiten interactuar con el contenido que muestra el vídeo.
+      </p>
+      <p>
+        Si queremos incluir un vídeo en nuestra página HTML5 simplemente tendremos que escribir lo siguiente:
+      </p>
+      <code>video src="mivideo.webm" controls>
+  p>Su navegador no soporta vídeos HTML5./p>
+/video>
+      </code>
+      <p>
+        Dentro del código tenemos que conocer el significado de sus dos atributos. Por un lado el atributo src nos sirve para indicar el nombre del fichero que contiene el vídeo que queremos reproducir.</br>
+
+Mientras que por el otro el atributo controls permite que se muestre un panel de control de reprodución del vídeo, para que se pueda iniciar, parar, adelantar, cambiar el sonido,…
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Referencias">
+    <header>Referencias</header>
+    <article>
+      <ul>
+        <li>
+          Mas informacion da click en el enlace
+          <a
+            href="https://www.manualweb.net/html5/video-html5/"
+            target="_blank"
+            >Manual HTML5</a
+          >
+        </li>
+      </ul>
+    </article>
+  </section>
+</main>
